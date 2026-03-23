@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}Wedding Cinematography – Hamid Video Films{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/service.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<section class="gallery-header">
+    <div class="container">
+        <h1 class="page-title">Wedding Cinematography</h1>
+        <p class="page-subtitle">Cinematic storytelling that brings your wedding to life</p>
+    </div>
+</section>
+
+<!-- Service Description -->
+<section class="service-detail-section">
+    <div class="container">
+        <div class="service-detail-content fade-in">
+            <h2 class="section-title">Professional Wedding Films</h2>
+            <div class="decorative-line"></div>
+
+            <p class="service-detail-text">
+                Wedding cinematography is the art of capturing your special day in a cinematic and storytelling style. It transforms beautiful moments into a timeless film filled with emotion, elegance, and creativity.
+            </p>
+            <p class="service-detail-text">
+                With expert direction, stabilized shooting techniques, and high-end editing, we craft cinematic wedding films that feel like a movie of your love story. From grand celebrations to intimate moments, we make every frame meaningful and memorable.
+            </p>
+            
+            <p class="service-detail-text">
+                Your wedding deserves to be remembered not just through photographs, but through the moving story of your special day. Our cinematography service transforms wedding moments into cinematic masterpieces with professional-grade equipment, creative direction, and expert editing.
+            </p>
+            
+            <p class="service-detail-text">
+                We specialize in creating complete wedding films that capture the essence, emotions, and beauty of your celebration. From the emotional vows to the energetic reception, every frame is crafted to tell your unique love story in a way that will move you to tears for years to come.
+            </p>
+
+            <div class="service-features">
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 0 %}<img src="{{ feature_images[0] }}" alt="4K Cinema Quality" class="feature-image">{% endif %}
+                    <h3>4K Cinema Quality</h3>
+                    <p>Shot in 4K resolution with professional cinema cameras and lenses</p>
+                </div>
+
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 1 %}<img src="{{ feature_images[1] }}" alt="Creative Storytelling" class="feature-image">{% endif %}
+                    <h3>Creative Storytelling</h3>
+                    <p>Professional editing with color grading, music, and effects</p>
+                </div>
+
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 2 %}<img src="{{ feature_images[2] }}" alt="Custom Soundtracks" class="feature-image">{% endif %}
+                    <h3>Custom Soundtracks</h3>
+                    <p>Beautifully curated music that complements your wedding narrative</p>
+                </div>
+
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 3 %}<img src="{{ feature_images[3] }}" alt="Multiple Film Versions" class="feature-image">{% endif %}
+                    <h3>Multiple Film Versions</h3>
+                    <p>Complete film, highlights reel, and shareable short versions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Films Section -->
+<section class="gallery">
+    <div class="container">
+        <h2 class="section-title">Featured Films</h2>
+        <p class="section-subtitle">Watch our cinematic wedding stories</p>
+
+        <div class="films-grid-small">
+            <!-- FILM 1 -->
+            <div class="film-wrapper">
+                <a href="https://www.youtube.com/watch?v=hgwNAPem2P0" target="_blank" class="film-card">
+                    <img src="https://img.youtube.com/vi/hgwNAPem2P0/maxresdefault.jpg" alt="Wedding Film">
+                    <div class="film-overlay"><span class="play-icon">▶</span></div>
+                </a>
+                <h3 class="film-title">Priya & Raj</h3>
+            </div>
+
+            <!-- FILM 2 -->
+            <div class="film-wrapper">
+                <a href="https://www.youtube.com/watch?v=gllUoVniz60" target="_blank" class="film-card">
+                    <img src="https://img.youtube.com/vi/gllUoVniz60/maxresdefault.jpg" alt="Wedding Film">
+                    <div class="film-overlay"><span class="play-icon">▶</span></div>
+                </a>
+                <h3 class="film-title">Aisha & Farhan</h3>
+            </div>
+
+            <!-- FILM 3 -->
+            <div class="film-wrapper">
+                <a href="https://www.youtube.com/watch?v=wr21aBFySws" target="_blank" class="film-card">
+                    <img src="https://img.youtube.com/vi/wr21aBFySws/maxresdefault.jpg" alt="Wedding Film">
+                    <div class="film-overlay"><span class="play-icon">▶</span></div>
+                </a>
+                <h3 class="film-title">Neha & Arjun</h3>
+            </div>
+        </div>
+
+        <!-- View All Films -->
+        <div class="view-all-films">
+            <a href="{{ url_for('films') }}" class="btn-view-all">View All Films</a>
+            <a href="{{ url_for('gallery') }}" class="btn-view-all" style="margin-left:1rem;">See Our Work</a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content fade-in">
+            <h2 class="cta-title">Create Your Perfect Wedding Film</h2>
+            <p class="cta-subtitle">
+                Transform your wedding into a cinematic masterpiece. Let's discuss your vision and create a film you'll cherish forever.
+            </p>
+
+            <div class="cta-buttons">
+                <a href="https://wa.me/918265993619" target="_blank" class="btn-cta btn-whatsapp">
+                    <span class="btn-icon">💬</span>
+                    Chat on WhatsApp
+                </a>
+
+                <a href="tel:+918265993619" class="btn-cta btn-secondary">
+                    <span class="btn-icon">📞</span>
+                    Call Us Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block page_js %}
+<script src="{{ url_for('static', filename='js/about.js') }}"></script>
+{% endblock %}

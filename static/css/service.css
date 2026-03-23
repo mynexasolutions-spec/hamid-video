@@ -1,0 +1,387 @@
+/* ===== SERVICE DETAIL SECTION ===== */
+.service-detail-section {
+    padding: 6rem 3rem;
+    background: var(--cream);
+}
+
+.service-detail-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.decorative-line {
+    width: 80px;
+    height: 3px;
+    background: var(--primary-green);
+    margin: 1.5rem auto 2.5rem;
+}
+
+.service-detail-text {
+    font-size: 1.35rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+    text-align: justify;
+}
+
+/* ===== SERVICE FEATURES ===== */
+.service-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-box {
+    background: white;
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(45, 90, 61, 0.08);
+    transition: all 0.4s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 45px rgba(45, 90, 61, 0.15);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.feature-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    margin-bottom: 0.8rem;
+}
+
+.feature-box p {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* ===== FILMS GRID (SMALL) ===== */
+.films-grid-small {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.film-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.film-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    aspect-ratio: 16 / 9;
+    display: block;
+    text-decoration: none;
+}
+
+.film-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.film-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(45,90,61,0.25);
+}
+
+.film-card:hover img {
+    transform: scale(1.08);
+}
+
+.film-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.film-card:hover .film-overlay {
+    opacity: 1;
+}
+
+.play-icon {
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    background: rgba(201, 151, 43, 0.95);
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+    transition: transform 0.3s ease;
+}
+
+.film-card:hover .play-icon {
+    transform: scale(1.1);
+}
+
+.film-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-green);
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.view-all-films {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 3rem;
+    background: var(--primary-green);
+    color: white;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-green);
+}
+
+.btn-view-all:hover {
+    background: transparent;
+    color: var(--primary-green);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .service-detail-section {
+        padding: 5rem 2rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .service-features {
+        grid-template-columns: 1fr;
+    }
+
+    .films-grid-small {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .service-detail-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .service-detail-text {
+        font-size: 1rem;
+    }
+
+    .feature-box {
+        padding: 1.5rem;
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+
+    .feature-box h3 {
+        font-size: 1.1rem;
+    }
+
+    .films-grid-small {
+        grid-template-columns: 1fr;
+    }
+
+    .film-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-detail-section {
+        padding: 3rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .service-detail-text {
+        font-size: 0.95rem;
+    }
+
+    .decorative-line {
+        width: 60px;
+    }
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+    margin: 5rem auto 6rem;
+    padding: 5rem 3rem;
+    max-width: 1400px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+    text-align: center;
+    color: white;
+    box-shadow: 0 25px 70px rgba(45, 90, 61, 0.35);
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.cta-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    background: #1fb957;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background: #c9972b;
+    color: white;
+    border-color: #c9972b;
+}
+
+.btn-secondary:hover {
+    background: #b58722;
+    transform: translateY(-3px);
+}
+
+.btn-icon {
+    font-size: 1.3rem;
+}
+
+/* Responsive CTA */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .cta-title {
+        font-size: 2.2rem;
+    }
+
+    .cta-subtitle {
+        font-size: 1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn-cta {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-section {
+        padding: 3rem 1rem;
+    }
+
+    .cta-title {
+        font-size: 1.8rem;
+    }
+
+    .btn-cta {
+        padding: 0.9rem 2rem;
+        font-size: 0.95rem;
+    }
+}

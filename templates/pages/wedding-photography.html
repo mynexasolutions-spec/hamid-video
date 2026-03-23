@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}Wedding Photography – Hamid Video Films{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/service.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<section class="gallery-header">
+    <div class="container">
+        <h1 class="page-title">Wedding Photography</h1>
+        <p class="page-subtitle">Timeless moments captured with artistic precision</p>
+    </div>
+</section>
+
+<!-- Service Description -->
+<section class="service-detail-section">
+    <div class="container">
+        <div class="service-detail-content fade-in">
+            <h2 class="section-title">Capturing Your Beautiful Day</h2>
+            <div class="decorative-line"></div>
+
+            <p class="service-detail-text">
+                Wedding cinematography is the art of capturing your special day in a cinematic and storytelling style. It transforms beautiful moments into a timeless film filled with emotion, elegance, and creativity.
+            </p>
+            <p class="service-detail-text">
+                With expert direction, stabilized shooting techniques, and high-end editing, we craft cinematic wedding films that feel like a movie of your love story. From grand celebrations to intimate moments, we make every frame meaningful and memorable.
+            </p>
+            
+            <p class="service-detail-text">
+                At Hamid Video Films, we believe every wedding deserves more than just photographs – it deserves a visual narrative of your love story. Our wedding photography service combines traditional elegance with contemporary artistry to create stunning images that tell your unique tale.
+            </p>
+            
+            <p class="service-detail-text">
+                With over 30 years of experience and more than 3,500 weddings captured, our photographers understand the importance of every moment – from the tender first look to the joyous celebrations. We use professional-grade equipment and post-processing techniques to ensure every image is a masterpiece worthy of framing.
+            </p>
+
+            <div class="service-features">
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 0 %}<img src="{{ feature_images[0] }}" alt="Professional Coverage" class="feature-image">{% endif %}
+                    <h3>Professional Coverage</h3>
+                    <p>Full-day coverage with multiple photographers capturing every precious moment</p>
+                </div>
+
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 1 %}<img src="{{ feature_images[1] }}" alt="Artistic Editing" class="feature-image">{% endif %}
+                    <h3>Artistic Editing</h3>
+                    <p>Professional color grading and retouching to enhance every photograph</p>
+                </div>
+
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 2 %}<img src="{{ feature_images[2] }}" alt="High-Resolution" class="feature-image">{% endif %}
+                    <h3>High-Resolution Delivery</h3>
+                    <p>All photos delivered in high-resolution format with unlimited printing rights</p>
+                </div>
+
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 3 %}<img src="{{ feature_images[3] }}" alt="Premium Albums" class="feature-image">{% endif %}
+                    <h3>Premium Albums</h3>
+                    <p>Beautifully curated albums and printed collections to treasure forever</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Preview -->
+<section class="gallery-section">
+    <div class="container">
+        <h2 class="section-title">Our Work</h2>
+        <p class="section-subtitle">A glimpse of beautiful moments we've captured</p>
+        <div class="gallery-masonry" id="galleryMasonry">
+            <div class="masonry-col" id="mCol0"></div>
+            <div class="masonry-col" id="mCol1"></div>
+            <div class="masonry-col" id="mCol2"></div>
+        </div>
+        <div id="gallerySource" style="display:none">
+            {% for img_url in gallery_images %}
+            <div class="gallery-item">
+                <img src="{{ img_url }}" alt="Wedding photo">
+            </div>
+            {% endfor %}
+        </div>
+        <div class="view-all-films">
+            <a href="{{ url_for('gallery') }}" class="btn-view-all">See Our Work</a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content fade-in">
+            <h2 class="cta-title">Let's Capture Your Love Story</h2>
+            <p class="cta-subtitle">
+                Ready to preserve your special moments? Get in touch with us today to discuss your wedding photography needs.
+            </p>
+
+            <div class="cta-buttons">
+                <a href="https://wa.me/918265993619" target="_blank" class="btn-cta btn-whatsapp">
+                    <span class="btn-icon">💬</span>
+                    Chat on WhatsApp
+                </a>
+
+                <a href="tel:+918265993619" class="btn-cta btn-secondary">
+                    <span class="btn-icon">📞</span>
+                    Call Us Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block page_js %}
+<script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
+{% endblock %}

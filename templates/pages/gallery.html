@@ -4,6 +4,7 @@
 
 {% block page_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/service.css') }}">
 {% endblock %}
 
 {% block content %}
@@ -18,23 +19,21 @@
 
 <!-- Gallery Section -->
 <section class="gallery-section">
-    <div class="container">
-
-        <div id="galleryGrid" class="gallery-grid">
-            {% for image in images %}
+    <!-- 3 physical columns built by gallery.js -->
+    <div class="gallery-masonry" id="galleryMasonry">
+        <div class="masonry-col" id="mCol0"></div>
+        <div class="masonry-col" id="mCol1"></div>
+        <div class="masonry-col" id="mCol2"></div>
+    </div>
+    <!-- Source items in folder order (hidden until JS places them) -->
+    <div id="gallerySource" style="display:none">
+        {% for folder in folders %}
+            {% for image in folder.images %}
                 <div class="gallery-item">
-                    <img src="{{ image.url }}" alt="Wedding Gallery Image">
+                    <img src="{{ image.url }}" alt="Gallery Image">
                 </div>
             {% endfor %}
-        </div>
-
-        <!-- Pagination -->
-        <div class="pagination">
-            <button id="prevBtn" class="page-btn" disabled>Previous</button>
-            <span id="pageInfo"></span>
-            <button id="nextBtn" class="page-btn">Next</button>
-        </div>
-
+        {% endfor %}
     </div>
 </section>
 
@@ -45,6 +44,28 @@
     <button class="lightbox-nav prev">&#10094;</button>
     <button class="lightbox-nav next">&#10095;</button>
 </div>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content fade-in">
+            <h2 class="cta-title">Let's Capture Your Special Day</h2>
+            <p class="cta-subtitle">
+                Inspired by what you see? Get in touch with us today and let's create beautiful memories together.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/918265993619" target="_blank" class="btn-cta btn-whatsapp">
+                    <span class="btn-icon">💬</span>
+                    Chat on WhatsApp
+                </a>
+                <a href="tel:+918265993619" class="btn-cta btn-secondary">
+                    <span class="btn-icon">📞</span>
+                    Call Us Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
 

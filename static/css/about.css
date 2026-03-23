@@ -91,10 +91,19 @@
     background: var(--soft-green);
 }
 
+.team-intro {
+    max-width: 800px;
+    margin: 0 auto 3.5rem;
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: var(--text-dark);
+    text-align: center;
+}
+
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
 }
 
 .team-member {
@@ -239,11 +248,17 @@
     }
 
     .team-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .cta-title {
         font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .team-grid {
+        grid-template-columns: 1fr;
     }
 }
 

@@ -14,17 +14,66 @@
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title split-title">
-                <span class="title-left">Hamid</span>
-                <span class="title-right">Video Films</span>
+            <h1 class="hero-title">
+                <span class="title-main">Hamid Video Films</span>
             </h1>
 
             <p class="hero-workline">
                 Wedding Films • Pre-Wedding Stories • Complete Video Production
             </p>
+        </div>
+    </section>
 
-            <div class="hero-since">
-                <span>Since 1990</span>
+    <!-- What We Do Section -->
+    <section class="what-we-do" id="services">
+        <div class="container">
+            <h2 class="section-title">What We Do</h2>
+            <p class="section-subtitle">Our premium wedding services</p>
+
+            <div class="services-grid">
+                <!-- Wedding Photography -->
+                <a href="{{ url_for('wedding_photography') }}" class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="https://res.cloudinary.com/dedcvbzb9/image/upload/v1770477827/index_stories_fjgvt2.webp" alt="Wedding Photography">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Wedding Photography</h3>
+                        <p class="service-description">Timeless moments captured with artistic precision and emotional depth.</p>
+                    </div>
+                </a>
+
+                <!-- Pre Wedding -->
+                <a href="{{ url_for('pre_wedding') }}" class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="https://res.cloudinary.com/dedcvbzb9/image/upload/v1770421795/IMG_2362.JPG_xymwwc.webp" alt="Pre Wedding">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Pre Wedding</h3>
+                        <p class="service-description">Romantic stories told before the big day, showcasing your love journey.</p>
+                    </div>
+                </a>
+
+                <!-- Cinematography -->
+                <a href="{{ url_for('cinematography') }}" class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="https://res.cloudinary.com/dedcvbzb9/image/upload/v1770461171/IMG_2001.JPG_jun045.webp" alt="Cinematography">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Cinematography</h3>
+                        <p class="service-description">Cinematic wedding films with professional editing and stunning visuals.</p>
+                    </div>
+                </a>
+
+                <!-- Wedding Stories -->
+                <a href="{{ url_for('wedding_stories') }}" class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="https://res.cloudinary.com/dedcvbzb9/image/upload/v1770468063/IMG_2619.JPG_sbvuuu.webp" alt="Wedding Stories">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Wedding Stories</h3>
+                        <p class="service-description">Complete coverage from ceremonies to receptions, every precious moment.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>

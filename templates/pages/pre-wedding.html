@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Pre-Wedding Photography – Hamid Video Films{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/service.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<section class="gallery-header">
+    <div class="container">
+        <h1 class="page-title">Pre-Wedding Photography</h1>
+        <p class="page-subtitle">Your love story before the main event</p>
+    </div>
+</section>
+
+<!-- Service Description -->
+<section class="service-detail-section">
+    <div class="container">
+        <div class="service-detail-content fade-in">
+            <h2 class="section-title">Celebrate Your Love Journey</h2>
+            <div class="decorative-line"></div>
+
+            <p class="service-detail-text">
+                We are highly recommended to our client for pre wedding photography. It's a best way to create chemistry between the wedding couple and also to allow a photographer to know about likes and dislikes, best postures, comfort zones, creative angles and best poses of couples. We have unique ideas to make your pre wedding photo shoot fun and loving.
+            </p>
+            
+            <p class="service-detail-text">
+                Your love story began long before the wedding day. Our pre-wedding photography service captures the romantic chapters leading up to your special moment. Whether it's a casual outdoor shoot, a beautifully styled session, or an intimate portrait series, we create stunning images that reflect your unique relationship.
+            </p>
+            
+            <p class="service-detail-text">
+                Pre-wedding shoots are an opportunity to relax, have fun, and create memories with your partner in a relaxed setting. Our photographers excel at capturing authentic emotions and genuine moments, resulting in images that feel personal and timeless.
+            </p>
+
+            <div class="service-features">
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 0 %}<img src="{{ feature_images[0] }}" alt="Outdoor Locations" class="feature-image">{% endif %}
+                    <h3>Outdoor Locations</h3>
+                    <p>Beautiful settings in gardens, scenic spots, and cultural landmarks</p>
+                </div>
+
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 1 %}<img src="{{ feature_images[1] }}" alt="Romantic Moments" class="feature-image">{% endif %}
+                    <h3>Romantic Moments</h3>
+                    <p>Candid shots that capture the genuine affection between you and your partner</p>
+                </div>
+
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 2 %}<img src="{{ feature_images[2] }}" alt="Professional Styling" class="feature-image">{% endif %}
+                    <h3>Professional Styling</h3>
+                    <p>Guidance on outfits, poses, and expressions for the perfect look</p>
+                </div>
+
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 3 %}<img src="{{ feature_images[3] }}" alt="Flexible Duration" class="feature-image">{% endif %}
+                    <h3>Flexible Duration</h3>
+                    <p>Half-day or full-day sessions tailored to your preferences</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Preview -->
+<section class="gallery-section">
+    <div class="container">
+        <h2 class="section-title">Pre-Wedding Gallery</h2>
+        <p class="section-subtitle">Romantic moments beautifully captured</p>
+        <div class="gallery-masonry" id="galleryMasonry">
+            <div class="masonry-col" id="mCol0"></div>
+            <div class="masonry-col" id="mCol1"></div>
+            <div class="masonry-col" id="mCol2"></div>
+        </div>
+        <div id="gallerySource" style="display:none">
+            {% for img_url in gallery_images %}
+            <div class="gallery-item">
+                <img src="{{ img_url }}" alt="Pre-wedding photo">
+            </div>
+            {% endfor %}
+        </div>
+        <div class="view-all-films">
+            <a href="{{ url_for('gallery') }}" class="btn-view-all">See Our Work</a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content fade-in">
+            <h2 class="cta-title">Book Your Pre-Wedding Session</h2>
+            <p class="cta-subtitle">
+                Let's create beautiful memories before your big day. Contact us to plan your perfect pre-wedding shoot.
+            </p>
+
+            <div class="cta-buttons">
+                <a href="https://wa.me/918265993619" target="_blank" class="btn-cta btn-whatsapp">
+                    <span class="btn-icon">💬</span>
+                    Chat on WhatsApp
+                </a>
+
+                <a href="tel:+918265993619" class="btn-cta btn-secondary">
+                    <span class="btn-icon">📞</span>
+                    Call Us Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block page_js %}
+<script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
+{% endblock %}

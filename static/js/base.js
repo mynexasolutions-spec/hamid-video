@@ -40,14 +40,20 @@ if (mobileToggle && navMenu) {
 
 // ===== NAVBAR SCROLL EFFECT =====
 const navbar = document.getElementById('navbar');
+
+function handleNavbarScroll() {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+}
+
 if (navbar) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+    window.addEventListener('scroll', handleNavbarScroll);
+
+    // 👇 Force initial check on page load
+    window.addEventListener('load', handleNavbarScroll);
 }
 
 // ===== SMOOTH SCROLLING =====

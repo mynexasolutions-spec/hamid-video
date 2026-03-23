@@ -1,3 +1,25 @@
+/* ===== TOP SOCIAL BAR ===== */
+.top-social-bar {
+    width: 100%;
+    background: var(--primary-green);
+    padding: 0.3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+.top-social-icons {
+    display: flex;
+    gap: 1.2rem;
+}
+.top-social-bar .social-link {
+    color: #fff;
+    font-size: 1.35rem;
+    transition: color 0.2s;
+}
+.top-social-bar .social-link:hover {
+    color: var(--gold-accent);
+}
 /* ===== BASE STYLES ===== */
 * {
     margin: 0;
@@ -20,6 +42,7 @@ body {
     font-family: 'Cormorant Garamond', serif;
     color: var(--text-dark);
     background: var(--cream);
+    /* background: #000; */
     line-height: 1.7;
     overflow-x: hidden;
 }

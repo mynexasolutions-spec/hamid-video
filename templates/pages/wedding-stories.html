@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}Wedding Stories – Hamid Video Films{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/service.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<section class="gallery-header">
+    <div class="container">
+        <h1 class="page-title">Wedding Stories</h1>
+        <p class="page-subtitle">Complete coverage of your entire celebration</p>
+    </div>
+</section>
+
+<!-- Service Description -->
+<section class="service-detail-section">
+    <div class="container">
+        <div class="service-detail-content fade-in">
+            <h2 class="section-title">Your Complete Wedding Narrative</h2>
+            <div class="decorative-line"></div>
+
+            <!-- Font size for .service-detail-text is already increased globally in service.css -->
+            
+            <p class="service-detail-text">
+                A wedding is much more than just ceremonies and receptions – it's a beautiful journey filled with countless moments of love, joy, and connection. Our Wedding Stories service provides comprehensive coverage from the first preparations to the final celebrations, capturing every significant moment that makes your day special.
+            </p>
+            
+            <p class="service-detail-text">
+                We document the nervous excitement before the ceremony, the tender emotions during vows, the energetic celebrations at the reception, and all the candid moments in between. The result is a complete visual story that you and your loved ones can revisit and relive for generations to come.
+            </p>
+
+            <div class="service-features">
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 0 %}<img src="{{ feature_images[0] }}" alt="Complete Coverage" class="feature-image">{% endif %}
+                    <h3>Complete Coverage</h3>
+                    <p>Full-day documentation from start to finish of all wedding events</p>
+                </div>
+
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 1 %}<img src="{{ feature_images[1] }}" alt="Multiple Teams" class="feature-image">{% endif %}
+                    <h3>Multiple Teams</h3>
+                    <p>Multiple photographers and cinematographers capturing different angles</p>
+                </div>
+
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 2 %}<img src="{{ feature_images[2] }}" alt="Candid & Posed" class="feature-image">{% endif %}
+                    <h3>Candid & Posed</h3>
+                    <p>Natural moments blended with professionally posed family portraits</p>
+                </div>
+
+                <div class="feature-box fade-in">
+                    {% if feature_images|length > 3 %}<img src="{{ feature_images[3] }}" alt="Comprehensive Packages" class="feature-image">{% endif %}
+                    <h3>Comprehensive Packages</h3>
+                    <p>Photos, videos, albums, and digital downloads all included</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Preview -->
+<section class="gallery-section">
+    <div class="container">
+        <h2 class="section-title">Complete Celebrations Captured</h2>
+        <p class="section-subtitle">Moments from ceremonies to receptions</p>
+        <div class="gallery-masonry" id="galleryMasonry">
+            <div class="masonry-col" id="mCol0"></div>
+            <div class="masonry-col" id="mCol1"></div>
+            <div class="masonry-col" id="mCol2"></div>
+        </div>
+        <div id="gallerySource" style="display:none">
+            {% for img_url in gallery_images %}
+            <div class="gallery-item">
+                <img src="{{ img_url }}" alt="Wedding story">
+            </div>
+            {% endfor %}
+        </div>
+        <div class="view-all-films">
+            <a href="{{ url_for('gallery') }}" class="btn-view-all">See Our Work</a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content fade-in">
+            <h2 class="cta-title">Preserve Your Complete Wedding Story</h2>
+            <p class="cta-subtitle">
+                Let us capture every precious moment of your special day from beginning to end.
+            </p>
+
+            <div class="cta-buttons">
+                <a href="https://wa.me/918265993619" target="_blank" class="btn-cta btn-whatsapp">
+                    <span class="btn-icon">💬</span>
+                    Chat on WhatsApp
+                </a>
+
+                <a href="tel:+918265993619" class="btn-cta btn-secondary">
+                    <span class="btn-icon">📞</span>
+                    Call Us Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block page_js %}
+<script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
+{% endblock %}
